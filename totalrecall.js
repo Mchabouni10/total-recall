@@ -369,6 +369,10 @@
 //console.log(`Thom is looking fierce in a ${thomsCloset[0][0]}, ${thomsCloset[1][1]} and ${thomsCloset[2][1]}`)
 // Get more specific about what kind of PJs Thom's wearing this winter.
 // Modify the name of his PJ pants to Footie Pajamas.
-thomsCloset[1][2] = 'Footie Pajamas'
+// thomsCloset[1][2] = 'Footie Pajamas'
 // console.log(thomsCloset)
 
+//===========================================
+//IV. Functions
+//===========================================
+//1. A. printGreeting
