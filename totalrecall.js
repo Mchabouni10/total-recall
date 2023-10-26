@@ -376,3 +376,240 @@
 //IV. Functions
 //===========================================
 //1. A. printGreeting
+
+
+
+
+
+
+
+
+
+
+//======================================================================================================
+// B. PrintCool
+// Write a function printCoolthat accepts one parameter, nameas an argument. The function should print the name and a message saying that that person is cool.
+
+function printCool(name) {
+    return (`${name} is cool`)
+}
+// console.log(printCool("Captain Reynolds"));
+// // => "Captain Reynolds is cool";
+
+// C. calculateCube
+// Write a function calculateCubethat takes a single number and
+// prints the volume of a cube made from that number.
+function calculateCube(num) {
+    return num ** 3
+}
+// console.log(calculateCube(5));
+// // => 125
+
+// D. isVowel
+// Write a function isVowelthat takes a character 
+//(i.e. a string of length 1) and returns true if it is a vowel, false otherwise. 
+//The vowel could be upper or lower case. 
+//Test your function on every vowel and make sure it's working. 
+//In general, when you write functions, take a minute to test them 
+// with different values to make sure they behave the way you want.
+
+function isVowel(char) {
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    let decision = false;
+    for (let vowel of vowels) {
+        if (char === vowel.toUpperCase() || char === vowel.toLowerCase()) {
+            decision = true;
+        }
+    }
+    return decision;
+}
+
+// console.log(isVowel("a"));
+// // => true
+
+// E. getTwoLengths
+// Write a function getTwoLengthsthat accepts two parameters (strings).
+// The function should return an array of numbers where each
+// number is the length of the corresponding string.
+
+function getTwoLengths(string1, string2) {
+    const lenArray = []
+    lenArray.push(string1.length)
+    lenArray.push(string2.length)
+    return (lenArray)
+}
+
+// console.log(getTwoLengths("Hank", "Hippopopalous"));
+// => [4, 13]
+
+// F. getMultipleLengths
+// Write a function getMultipleLengths that
+// accepts a single parameter as an argument: an array of strings.
+// The function should return an array of numbers
+// where each number is the length of the corresponding string.
+
+function getMultipleLengths([...strings]) {
+    const lenArray = []
+    console.log(strings)
+    for (let string of strings) {
+        lenArray.push(string.length)
+    }
+    return lenArray
+}
+
+// console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
+// => [5, 4, 2, 2, 4]
+
+// G. maxOfThree
+// Define a function maxOfThreethat takes three numbers
+// as arguments and returns the largest of them.
+// If all numbers are the same, it doesn't matter which one is returned.
+// If the two largest numbers are the same, one of them should be returned.
+// Be sure to test it with larger values in each of the three locations.
+
+const maxOfThree = function (...nums) {
+    let max = nums[0];
+    for (let num of nums) {
+        if (typeof num !== 'number') return console.log(('Please enter valid arguements'));
+        if (num > max) max = num;
+    }
+    return max;
+}
+// console.log(maxOfThree(9, 6, 9));
+// => 9
+
+// H. printLongestWord
+// Write a function printLongestWordthat accepts a single argument, an array of strings.
+// The method should return the longest word in the array.
+// In case of a tie, the method should return the word that appears first in the array.
+
+const printLongestWord = function (arrayOfStrings) {
+    let longestWord = arrayOfStrings[0];
+    for (let string of arrayOfStrings) {
+        if (string.length > longestWord.length) longestWord = string;
+    }
+    return longestWord;
+}
+
+// console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanutbutter", "big", "Todd"]));
+// => "Peanutbutter"
+
+// V.Objects
+
+// A. Make a user object
+// Create an object called user.
+// Write in to the object the key-value pairs for name, email, age, and purchased. 
+// Set the value of purchased to an empty array []. Set the other values to whatever you would like.
+
+const user = {
+    name: 'Raam',
+    age: 30,
+    email: 'fun@gmail.com',
+    purchased: []
+}
+
+// B. Update the user
+// Our user has changed his or her email address.
+// Without changing the original userobject, update the email value to a new email address.
+// Our user has had a birthday! Without changing the original userobject,
+// increment the age value using the postfix operator. Hint: age++
+
+user.email = 'fullfun@gmail.com'
+user.age++
+
+// C. Adding keys and values
+// You have decided to add your user's location to the data that you want to collect.
+
+// Without changing the original userobject, add a new key locationto the object, 
+// and give it a value or some-or-other location (a string).
+
+user.location = 'Newark'
+
+// D. Shopaholic!
+// Our user has purchased an item! They have purchased some "carbohydrates". Using .push(), 
+// add the string "carbohydrates" to the purchasedarray.
+user.purchased.push("carbohydrates")
+// Our user has purchased an item! They have purchased 
+// some "peace of mind". Using .push(), add the string "peace of mind" to the purchasedarray.
+user.purchased.push("peace of mind")
+// Our user has purchased an item! They have purchased some "Merino jodhpurs".
+// Using .push(), add the string "Merino jodhpurs" to the purchasedarray.
+user.purchased.push("Merino jodhpurs")
+// Console.log just the "Merino jodhpurs" from the purchasedarray.
+
+// console.log(user)
+
+// E. Object-within-object
+// Remember that you can add an object to an existing object in the same way 
+// that you can add any new property/value pair.
+
+// If we want to give our user a friendwith a nameand age, we could write:
+
+// user.friend = {
+//     name: "Grace Hopper",
+//     age: 85
+// }
+// When we console.log user, we would see the friendobject added to our user object.
+
+// Write a friendobject into your userobject and give the 
+// friend a name, age, location, and purchased array (empty for now)
+user.friend = {
+    name: "Teo",
+    age: 31,
+    location: 'Chicago',
+    purchased: []
+}
+
+// Console.log just the friend's name
+// console.log(user.friend.name)
+// // Console.log just the friend's location
+// console.log(user.friend.location)
+// CHANGE the friend's age to 55
+user.friend.age = 55
+// The friendhas purchased "The One Ring". Use .push()to add "The One Ring" to the friend's purchasedarray.
+user.friend.purchased.push("The One Ring")
+// The friendhas purchased "A latte". Use .push()to add "A latte" to the friend's purchasedarray.
+user.friend.purchased.push("A latte")
+// Console.log just "A latte" from the friend's purchasedarray.
+// console.log(user.friend.purchased[1])
+
+
+// F. Loops
+// Write a for loop that iterates over the User's purchasedarray (NOT the friend's purchased array), 
+// and prints each element to the console.
+for (let item of user.purchased) {
+    // console.log(item)
+}
+// Write a for loop that iterates over the Friend's purchasedarray, and prints each element to the console.
+for (let item of user.friend.purchased) {
+    // console.log(item)
+}
+
+// G.Functions can operate on objects
+// Write a single function updateUser that takes no parameters.When the function is run, it should:
+// it should increment the user's age by 1
+// make the user's name uppercase
+// The function does not need a return statement, it will merely modify the user object.
+
+function updateUser() {
+    user.age++
+    user.name = user.name.toUpperCase()
+}
+
+//updateUser()
+// console.log(user)
+// Write a function oldAndLoud that performs 
+// the exact same tasks as updateUser, but instead of hard - coding 
+// it to only work on our userobject, make it take a parameter person, 
+// and have it modify the object that is passed in as an argument when the function is called.
+// Call your oldAndLoudfunction with user as the argument.
+
+function oldAndLoud(person) {
+    // console.log(person)
+    person.age++
+    person.name = person.name.toUpperCase()
+}
+
+// console.log(user)
+// oldAndLoud(user)
+// console.log(user)
